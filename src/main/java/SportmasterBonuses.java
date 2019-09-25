@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class sportmasterBonuses {
+public class SportmasterBonuses {
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
         System.out.print("Enter the accumulated amount of purchases: ");
