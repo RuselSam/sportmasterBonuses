@@ -9,18 +9,26 @@ public class SportmasterBonuses {
             int currentPurchaseAmount = scan.nextInt();
             int sumAllPurchase = accumulatedPurchaseAmount + currentPurchaseAmount;
             System.out.println("The sum of all purchases: " + sumAllPurchase);
-            if (sumAllPurchase > 0 && sumAllPurchase < 15000) {
-                int purchaseBonuses = (currentPurchaseAmount / 1000) * 50;
+            int minimalBorderPurchase=1000;
+            int firstLevelSumBorder=0;
+            int secondLevelSumBorder=15000;
+            int thirdLevelSumBorder=150000;
+            int firstLevelBonusesAvarded=50;
+            int secondLevelBonusesAvarded=70;
+            int thirdLevelBonusesAvarded=100;
+            if (sumAllPurchase > firstLevelSumBorder && sumAllPurchase < secondLevelSumBorder) {
+                int purchaseBonuses = (currentPurchaseAmount / minimalBorderPurchase) * firstLevelBonusesAvarded;
                 System.out.println("Purchase Bonuses: " + purchaseBonuses);
             }
-            if (sumAllPurchase > 15000 && sumAllPurchase < 150000) {
-                int purchaseBonuses = (currentPurchaseAmount / 1000) * 70;
+            if (sumAllPurchase > secondLevelSumBorder && sumAllPurchase < thirdLevelSumBorder) {
+                int purchaseBonuses = (currentPurchaseAmount / minimalBorderPurchase) * secondLevelBonusesAvarded;
                 System.out.println("Purchase Bonuses: " + purchaseBonuses);
             }
-            if (sumAllPurchase > 150000) {
-                int purchaseBonuses = (currentPurchaseAmount / 1000) * 100;
+            if (sumAllPurchase > thirdLevelBonusesAvarded) {
+                int purchaseBonuses = (currentPurchaseAmount / minimalBorderPurchase) * thirdLevelBonusesAvarded;
                 System.out.println("Purchase Bonuses: " + purchaseBonuses);
-            } else {
+            }
+            else {
                 System.out.println("The amount is not enough to get bonuses!");
             }
 
